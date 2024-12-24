@@ -1,3 +1,19 @@
 h1 {
-    color: purple;
+    color: black;
+    font-size: 70px;
+    background-color: rgba(164, 140, 213, 0.836);
+    font-family: "Times New Roman", Times, serif;
+}
+button {
+    color: white;
+    background-color: black;
+    border-color: blueviolet;
+    height: 100px;
+    width: 200px;
+    border-width: 0.3cm;
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+}
+h2 {
+    font-size: 50px;
 }
