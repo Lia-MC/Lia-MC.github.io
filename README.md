@@ -1,2 +1,2 @@
 # Lia-MC.github.io
-Personal Website
+Hello! My name is Lia. Welcome to my GitHub page!
