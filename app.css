@@ -96,4 +96,71 @@ p {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-  }
+}
+
+.nav {
+    width: 1200px;
+    height: 50px;
+    text-align: center;
+    margin: 10px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    place-items: center;
+    align-items: center;
+}
+.btn {
+    color: white;
+    background-color: rgb(196, 160, 221);
+    height: 50px;
+    width: 140px;
+    padding: 2px;
+    border: 2px solid black;
+    text-decoration: none;
+    font-size: medium;
+    align-items: center;
+    text-align: center;
+    line-height: 50px;
+}
+.sectionone {
+    width: 100vw;
+    height: 850px;
+    font-size: 50px;
+    text-align: center;
+    margin: 10px 5px;
+}
+.sectiontwo {
+    width: 100vw;
+    height: 300px;
+    font-size: 50px;
+    text-align: center;
+    margin: 10px 5px;
+}
+.sectionthree {
+    width: 100vw;
+    height: 850px;
+    font-size: 50px;
+    text-align: center;
+    margin: 10px 5px;
+}
+.sectionfour {
+    width: 100vw;
+    height: 850px;
+    font-size: 50px;
+    text-align: center;
+    margin: 10px 5px;
+}
+.sectionfive {
+    width: 100vw;
+    height: 650px;
+    font-size: 50px;
+    text-align: center;
+    margin: 10px 5px;
+}
+.sectionsix {
+    width: 100vw;
+    height: 850px;
+    font-size: 50px;
+    text-align: center;
+    margin: 10px 5px;
+}
