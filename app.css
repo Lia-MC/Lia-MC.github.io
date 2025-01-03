@@ -1,18 +1,20 @@
 * {background-color: rgba(164, 140, 213, 0.836)}
 h1 {
     color: black;
-    font-size: 70px;
+    font-size: 80px;
     font-family: "Times New Roman", Times, serif;
 }
 button {
     color: white;
     background-color: black;
     border-color: blueviolet;
-    height: 100px;
-    width: 200px;
-    border-width: 0.3cm;
-    font-size: 30px;
+    height: 70px;
+    width: 105px;
+    border-width: 0.2cm;
+    font-size: 16px;
     font-family: "Times New Roman", Times, serif;
+    margin: 0px 0px 0px 45px;
+    text-align: center;
 }
 h2 {
     font-size: 50px;
@@ -26,6 +28,9 @@ p {
     position: relative;
     margin: auto;
 }
+.topnav-right {
+    float: right;
+  }
 .mySlides {
     display: none;
 }
