@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link rel="stylesheet" href="app.css"/>
+</head>
+
+<body>
+    <div class="topnav-right">
+        <a><button onclick="window.location.href='index.html';">About Me</button></a>
+        <a><button onclick="window.location.href='projects.html';">Projects</button></a>
+        <a><button onclick="window.location.href='photography.html';">Photography</button></a>
+        <a><button onclick="window.location.href='contact.html';">Contact Me</button></a>
+    </div>
+    <h1>Lia M. C.</h1>
+    <div style="display: flex;">
+        <div style="align-items: center; width: 25%;">
+            <img src="images/personalwebsitepfpcandidate2.jpg" style="width: 95%; aspect-ratio: 1;">
+            <br>
+            <!--margins order: top, bottom, right, left-->
+            <div class="center">
+                <icon onclick="window.location.href='https://github.com/Lia-MC';"><img src="images/githubicon.svg" style="aspect-ratio: 1; width:20%;"></icon>
+                <icon onclick="window.location.href='https://gitlab.com/lmc37';"><img src="images/gitlabicon.png" style="aspect-ratio: 1; width:20%;"></icon>
+                <icon onclick="window.location.href='https://www.linkedin.com/in/lia-m-campbell/';"><img src="images/linkedinicon.png" style="aspect-ratio: 1; width:20%;"></icon>
+                <icon onclick="window.location.href='mailto:lia.campbell@mail.utoronto.ca';"><img src="images/emailicon.png" style="aspect-ratio: 1; width:20%;"></icon>
+            </div>
+        </div>
+        <div style="position: relative;">
+            <p>Hi! I'm Lia, an aspiring engineer and robot enthusiast who enjoys travelling, making and listening to music, watching musicals, and photography.</p>
+        </div>
+    </div>
+    
+    <h2>Gallery</h2>
+    <p>Here are some pictures of my projects, interests, and hobbies I've been working on recently.</p>
+
+    <!-- Add photography stuff and other hobby photos like music -->
+
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="images/civ102_bridge.jpg" style="width:100%">
+            <div class="text">I built a bridge out of Matboard and Contact Cement for my CIV102 course.</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="images/troubleshooting.jpg" style="width:90%" class="center">
+            <div class="text">I was troubleshooting the software issues of my FIRST Robotics Competition Team's robot at competition.</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="images/wiring (3).jpg" style="width:50%" class="center">
+            <div class="text">I wired the control system of my FIRST Robotics Competition Team's robot.</div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="images/crimping.jpg" style="width:80%" class="center">
+            <div class="text">I crimped connections for my FIRST Robotics Competition Team's robot.</div>
+        </div>
+
+        <!-- The &#_____; represent characters of < and > -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+    <!-- my goals -->
+
+    <div class="footer">
+        <br>
+        <icon onclick="window.location.href='index.html';">About Me</icon>
+        <span> | </span>
+        <icon onclick="window.location.href='projects.html';">Projects</icon>
+        <span> | </span>
+        <icon onclick="window.location.href='photography.html';">Photography</icon>
+        <span> | </span>
+        <icon onclick="window.location.href='contact.html';">Contact Me</icon>
+    </div>
+    <br>
+</body>
+
+<script src="app.js"></script>
+
+</html>
