@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Light & Polarization</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      text-align: center;
+      color: #3f51b5;
+    }
+
+    .section {
+      margin-top: 30px;
+    }
+
+    .section h2 {
+      color: #5c6bc0;
+    }
+
+    .section p {
+      line-height: 1.6;
+    }
+
+    .quiz {
+      background: #e3f2fd;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #42a5f5;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #1e88e5;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .emoji {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .tip {
+      background: #fff8e1;
+      padding: 15px;
+      border-left: 5px solid #ffd54f;
+      margin-top: 15px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌈 Understanding Polarization</h1>
+
+    <div class="section">
+      <h2>💡 What is Polarization?</h2>
+      <p>
+        Polarization is a property of light that describes the direction in which its electric field oscillates. Normally, light vibrates in all directions perpendicular to its path, but polarized light vibrates in just one direction.
+      </p>
+      <div class="tip">
+        🧃 Think of light like a wiggly rope: if you shake it up and down, the waves go in one direction — that's polarized light!
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>🕶️ Where Does It Show Up?</h2>
+      <ul>
+        <li>Polarized sunglasses block glare from horizontal surfaces like water or roads.</li>
+        <li>3D movies use polarized light to send different images to each eye.</li>
+        <li>Phone screens and camera filters use it too!</li>
+      </ul>
+    </div>
+
+    <div class="section quiz">
+      <h2>📝 Quick Quiz!</h2>
+      <p>Q: What do polarized sunglasses help block?</p>
+      <input type="text" id="quizInput" placeholder="your answer here" />
+      <button onclick="checkAnswer()">Check</button>
+      <div class="result" id="quizResult"></div>
+      <div class="emoji" id="quizEmoji">🤔</div>
+    </div>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const userAnswer = document.getElementById('quizInput').value.toLowerCase().trim();
+      const correctAnswers = ['glare', 'reflected light', 'reflection', 'horizontal light'];
+
+      if (correctAnswers.some(ans => userAnswer.includes(ans))) {
+        document.getElementById('quizResult').textContent = '✅ Correct! Polarized glasses reduce glare!';
+        document.getElementById('quizEmoji').textContent = '😎';
+      } else {
+        document.getElementById('quizResult').textContent = '❌ Not quite. Try again!';
+        document.getElementById('quizEmoji').textContent = '🧐';
+      }
+    }
+  </script>
+</body>
+</html>

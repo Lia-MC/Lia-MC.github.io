@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multiply Fun!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: #fefae0;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff3c7;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #ff7f50;
+      text-align: center;
+    }
+
+    .explanation {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      background: #d4f1f4;
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #ffa07a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ff8c66;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 60px;
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-left: 10px;
+    }
+
+    .emoji {
+      font-size: 30px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌟 Multiply Fun! 🌟</h1>
+    <div class="explanation">
+      Multiplication is just adding the same number again and again!<br />
+      For example: <strong>3 × 2</strong> means <strong>2 + 2 + 2</strong>, which equals <strong>6</strong>! 😊
+    </div>
+
+    <div class="question">
+      <p id="question-text">What is 2 × 3?</p>
+      <input type="number" id="answer" />
+      <button onclick="checkAnswer()">Check</button>
+      <div class="result" id="result"></div>
+      <div class="emoji" id="emoji">🤔</div>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { a: 2, b: 3 },
+      { a: 4, b: 5 },
+      { a: 6, b: 2 },
+      { a: 3, b: 3 },
+      { a: 7, b: 1 },
+    ];
+
+    let current = 0;
+
+    function updateQuestion() {
+      const q = questions[current];
+      document.getElementById('question-text').textContent = `What is ${q.a} × ${q.b}?`;
+      document.getElementById('answer').value = '';
+      document.getElementById('result').textContent = '';
+      document.getElementById('emoji').textContent = '🤔';
+    }
+
+    function checkAnswer() {
+      const q = questions[current];
+      const userAnswer = parseInt(document.getElementById('answer').value);
+      const correct = q.a * q.b;
+
+      if (userAnswer === correct) {
+        document.getElementById('result').textContent = 'Yay! You got it right! 🎉';
+        document.getElementById('emoji').textContent = '😄';
+        current = (current + 1) % questions.length;
+        setTimeout(updateQuestion, 1500);
+      } else {
+        document.getElementById('result').textContent = 'Oops! Try again! 💡';
+        document.getElementById('emoji').textContent = '😕';
+      }
+    }
+
+    updateQuestion();
+  </script>
+</body>
+</html>

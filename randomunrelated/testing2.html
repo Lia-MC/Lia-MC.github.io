@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>French Fun!</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background: #f0f8ff;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #ffe4e1;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #ff69b4;
+      text-align: center;
+    }
+
+    .explanation {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      background: #e0ffff;
+      padding: 20px;
+      border-radius: 15px;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #87cefa;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #00bfff;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100px;
+      padding: 5px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-left: 10px;
+    }
+
+    .emoji {
+      font-size: 30px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🇫🇷 French Fun! 🇫🇷</h1>
+    <div class="explanation">
+      Let's learn some simple French words! Try to guess the French word for the English word shown below. For example, the French word for "cat" is <strong>chat</strong>! 🐱
+    </div>
+
+    <div class="question">
+      <p id="question-text">What is the French word for "cat"?</p>
+      <input type="text" id="answer" />
+      <button onclick="checkAnswer()">Check</button>
+      <div class="result" id="result"></div>
+      <div class="emoji" id="emoji">🤔</div>
+    </div>
+  </div>
+
+  <script>
+    const words = [
+      { english: "cat", french: "chat" },
+      { english: "dog", french: "chien" },
+      { english: "apple", french: "pomme" },
+      { english: "red", french: "rouge" },
+      { english: "blue", french: "bleu" },
+      { english: "sun", french: "soleil" },
+    ];
+
+    let current = 0;
+
+    function updateQuestion() {
+      const q = words[current];
+      document.getElementById('question-text').textContent = `What is the French word for "${q.english}"?`;
+      document.getElementById('answer').value = '';
+      document.getElementById('result').textContent = '';
+      document.getElementById('emoji').textContent = '🤔';
+    }
+
+    function checkAnswer() {
+      const q = words[current];
+      const userAnswer = document.getElementById('answer').value.trim().toLowerCase();
+      const correct = q.french.toLowerCase();
+
+      if (userAnswer === correct) {
+        document.getElementById('result').textContent = 'Bravo! You got it! 🎉';
+        document.getElementById('emoji').textContent = '😄';
+        current = (current + 1) % words.length;
+        setTimeout(updateQuestion, 1500);
+      } else {
+        document.getElementById('result').textContent = 'Oops! Try again! 💡';
+        document.getElementById('emoji').textContent = '😕';
+      }
+    }
+
+    updateQuestion();
+  </script>
+</body>
+</html>
