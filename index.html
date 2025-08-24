@@ -76,7 +76,7 @@
             <!-- dark and light mode toggling: -->
             <button id="themeToggle" 
                     class="ml-auto sm:ml-0 rounded-xl px-3 py-1.5 text-sm border border-[var(--border)] hover:bg-[color-mix(in_srgb,var(--bg),white_8%)]" 
-                    aria-pressed="false" 
+                    aria-pressed="true" 
                     aria-label="Switch Theme">☾</button>
         </div>
     </header>
@@ -84,69 +84,109 @@
     <!-- MAIN!!! -->
     <!-- <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid gap-8 md:grid-cols-[320px,1fr]"> -->
     <!-- <main class="flex-1 p-6 max-w-3xl mx-auto space-y-10"> -->
-    <main class="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-12">
-  
-    <!-- my profile pic with mini introooo -->
-    <div class="flex justify-center lg:block lg:sticky lg:top-20">
-        <img src="images/personalwebsitepfpcandidate2.jpg" alt="Lia's Profile Picture"
-            class="w-40 h-40 lg:w-56 lg:h-56 rounded-2xl object-cover shadow-lg"/>
+    <!-- <main class="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-12"> -->
+    
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-7xl mx-auto px-6 lg:px-12">
+    
+        <!-- my profile pic with mini introooo -->
+        <aside class="lg:col-span-2">
+            <div class="sticky top-20 space-y-6">
+                <img src="images/personalwebsitepfpcandidate2.jpg" alt="Lia's Profile Picture"
+                    class="w-40 h-40 lg:w-56 lg:h-56 rounded-2xl object-cover shadow-lg"/>
 
-        <!-- links to fun stuffs -->
-        <section id="links" class="space-y-3">
-            <p></p>
-            <h2 class="text-2xl font-semibold">Find Me</h2>
-            <div class="flex flex-wrap gap-3">
-                <a href="mailto:lia.campbell@mail.utoronto.ca" class="btn-primary">Email</a>
-                <a href="https://github.com/Lia-MC" target="_blank" class="btn-primary">GitHub</a>
-                <a href="https://linkedin.com/in/lia-m-campbell" target="_blank" class="btn-primary">LinkedIn</a>
-                <!-- <a href="resume.pdf" target="_blank" class="btn-primary">Resume</a> -->
+                <!-- links to fun stuffs -->
+                <section id="links" class="space-y-3">
+                    <p></p>
+                    <h2 class="text-2xl font-semibold">Find Me</h2>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="mailto:lia.campbell@mail.utoronto.ca" class="btn-primary">Email</a>
+                        <a href="https://github.com/Lia-MC" target="_blank" class="btn-primary">GitHub</a>
+                        <a href="https://linkedin.com/in/lia-m-campbell" target="_blank" class="btn-primary">LinkedIn</a>
+                        <!-- <a href="resume.pdf" target="_blank" class="btn-primary">Resume</a> -->
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <!-- main content columnnn -->
+        <main class="lg:col-span-3">
+        <div class="space-y-10">
+        
+        <!-- INTRO!!! -->
+        <section id="about">
+            <h1 class="text-4xl font-bold mb-4">Hi, I'm Lia!</h1>
+            <p>
+                Hi! I'm Lia, an aspiring engineer and robot enthusiast who enjoys travelling, making and listening to music, watching musicals, and photography.
+            </p>
+        </section>
+
+        <!-- CURRENT WORK!!! -->
+        <section id="now">
+            <h2 class="text-2xl font-semibold">Current Work</h2>
+            <p>
+                vibinvibinvibin
+            </p>
+        </section>
+        
+        <!-- GALLERY!!! -->
+        <section id="gallery">
+            <h2 class="text-2xl font-semibold">Gallery</h2>
+            <p>
+                Recent projects, hobbies, and adventures!
+            </p>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
+                <img src="photographies/personal website pic 1.png" alt="photography" class="rounded-lg shadow"/>
             </div>
         </section>
-    </div>
 
-    <!-- main content columnnn -->
-    <div class="space-y-12">
-    
-    <!-- INTRO!!! -->
-    <section id="about">
-        <h1 class="text-4xl font-bold mb-4">Hi, I'm Lia!</h1>
-        <p class="text-lg text-black dark:text-gray-300">
-            Hi! I'm Lia, an aspiring engineer and robot enthusiast who enjoys travelling, making and listening to music, watching musicals, and photography.
+        <!-- CONTACT MEEE!!! -->
+        <section id="contact">
+        <h2 class="text-2xl font-semibold">Let's Connect!</h2>
+        <p>
+            Want to collaborate or have a matcha chat? Reach me at
+            <a href="mailto:lia.campbell@mail.utoronto.ca" class="underline">lia.campbell@mail.utoronto.ca</a>.
         </p>
-    </section>
-
-    <!-- CURRENT WORK!!! -->
-    <section id="now">
-        <h2 class="text-2xl font-semibold">Current Work</h2>
-        <p class="mt-2 text-black dark:text-gray-300">
-            vibinvibinvibin
-        </p>
-    </section>
-    
-    <!-- GALLERY!!! -->
-    <section id="gallery">
-        <h2 class="text-2xl font-semibold">Gallery</h2>
-        <p>Recent projects, hobbies, and adventures!</p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-4">
-            <img src="photographies/personal website pic 1.png" alt="photography" class="rounded-lg shadow"/>
+        </section>
         </div>
-    </section>
+        </main>
 
-    <!-- CONTACT MEEE!!! -->
-    <section id="contact">
-      <h2 class="text-2xl font-semibold">Let's Connect!</h2>
-      <p class="mt-2 text-gray-700 dark:text-gray-300">
-        Want to collaborate or have a matcha chat? Reach me at
-        <a href="mailto:lia.campbell@mail.utoronto.ca" class="underline">lia.campbell@mail.utoronto.ca</a>.
-      </p>
-    </section>
     </div>
-    </main>
 
     <!-- FOOTER!!! -->
-    <footer class="max-w-6xl mx-auto px-4 sm:px-6 pb-16 pt-4 text-xs" style="color:var(--muted)">
-        © <span id="year"></span> Lia.M.C.
+    <footer class="border-t pt-6 pb-10 text-sm text-center text-gray-500 dark:text-gray-400">
+        <p>© 2025 L.M.C. All rights reserved.</p>
     </footer>
+
+    <!-- border adjustment... -->
+    <div class="hidden lg:block lg:col-span-1"></div>
+
+    <script>
+        // dark and light mode toggling functionnn
+        const MODE = 'color-mode';
+        const root = document.documentElement;
+        const btn = document.getElementById('themeToggle');
+        function applyMode(mode) {
+            if (mode === 'light') {
+                root.classList.remove('dark');
+                btn.textContent = '☼';
+                btn.setAttribute('aria-pressed', 'false');
+            } else {
+                root.classList.add('dark');
+                btn.textContent = '☾';
+                btn.setAttribute('aria-pressed', 'true');
+            }
+        }
+
+        // default to dark mode unless locally saved otherwiseee
+        const saved = localStorage.getItem(MODE) || 'dark';
+        applyMode(saved);
+
+        btn.addEventListener('click', () => {
+            const next = root.classList.contains('dark') ? 'light' : 'dark';
+            applyMode(next);
+            localStorage.setItem(MODE, next);
+        });
+    </script>
 </body>
 
 </html>
