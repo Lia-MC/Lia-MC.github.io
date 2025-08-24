@@ -55,11 +55,28 @@
         .dot { box-shadow: 0 0 0 3px rgba(255,255,255,.5); }
         .dark .dot { box-shadow: 0 0 0 3px rgba(0,0,0,.6); }
     </style>
-
-
 </head>
 
-<body>
+<body class="antialiased font-sans bg-[var(--bg)] text-[var(--text)]">
+    <!-- HEADER!!! -->
+    <!-- sticky & top-0 keeps header at top when scrolling, z-40 ensures header appears on top of all other elements (higher z -> top layer) -->
+    <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--border)] bg-[color-mix(in_srgb,var(--bg),transparent_20%)]">
+        <!-- flex container with dimensions specified -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
+            <a href="#" class="font-semibold tracking-tight">Lia M. C.</a>
+            <!-- buttons for diff page sections -->
+            <nav class="ml-auto hidden sm:flex gap-6 text-sm" aria-label="Primary">
+                <!-- <a><button onclick="window.location.href='photography.html';">Photography</button></a> -->
+                <a class="nav-link" href="#now">About</a>
+                <a class="nav-link" href="#experience">Experience</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#hobbies">Hobbies</a>
+                <a class="nav-link" href="#contact">Let's Connect!</a>
+            </nav>
+            <!-- dark and light mode toggling: -->
+            <button id="themeToggle" class="ml-auto sm:ml-0 rounded-xl px-3 py-1.5 text-sm border border-[var(--border)] hover:bg-[color-mix(in_srgb,var(--bg),white_8%)]" aria-pressed="false" aria-label="Toggle dark mode">☾</button>
+        </div>
+    </header>
 </body>
 
 </html>
