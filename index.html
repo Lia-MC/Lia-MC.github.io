@@ -23,23 +23,23 @@
     <style>
         /* light modeee */
         :root {
-            --bg: #F4EEFF;          /* page background */
-            --card: rgba(255,255,255,0.70); /* card background */
-            --text: #0f172a;        /* primary text (slate-900-ish) */
-            --muted: #475569;       /* secondary text */
-            --border: rgba(100,116,139,0.35); /* slate-500-ish */
-            --accent: #7c3aed;      /* mid purple */
-            --chip: rgba(255,255,255,0.55);  /* pill bg */
+            --bg: #F4EEFF; 
+            --card: rgba(255,255,255,0.70);
+            --text: #0f172a; 
+            --muted: #475569; 
+            --border: rgba(100,116,139,0.35);
+            --accent: #7c3aed; 
+            --chip: rgba(255,255,255,0.55); 
             --chip-border: rgba(100,116,139,0.35);
         }
         /* dark modeee */
         .dark {
-            --bg: #100016;          /* deep purple */
+            --bg: #100016;
             --card: rgba(16,0,22,0.60);
-            --text: #e5e7eb;        /* slate-200-ish */
-            --muted: #a1a1aa;       /* zinc-400-ish */
+            --text: #e5e7eb; 
+            --muted: #a1a1aa; 
             --border: rgba(148,163,184,0.25);
-            --accent: #a78bfa;      /* lighter purple */
+            --accent: #a78bfa;
             --chip: rgba(255,255,255,0.08);
             --chip-border: rgba(148,163,184,0.30);
         }
@@ -74,7 +74,10 @@
                 <a class="nav-link" href="#contact">Let's Connect!</a>
             </nav>
             <!-- dark and light mode toggling: -->
-            <button id="themeToggle" class="ml-auto sm:ml-0 rounded-xl px-3 py-1.5 text-sm border border-[var(--border)] hover:bg-[color-mix(in_srgb,var(--bg),white_8%)]" aria-pressed="false" aria-label="Toggle dark mode">☾</button>
+            <button id="themeToggle" 
+                    class="ml-auto sm:ml-0 rounded-xl px-3 py-1.5 text-sm border border-[var(--border)] hover:bg-[color-mix(in_srgb,var(--bg),white_8%)]" 
+                    aria-pressed="false" 
+                    aria-label="Switch Theme">☾</button>
         </div>
     </header>
 
@@ -84,9 +87,9 @@
     <main class="max-w-5xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-12">
   
     <!-- my profile pic with mini introooo -->
-    <div class="flex justify-center lg:block">
+    <div class="flex justify-center lg:block lg:sticky lg:top-20">
         <img src="images/personalwebsitepfpcandidate2.jpg" alt="Lia's Profile Picture"
-            class="w-40 h-40 lg:w-56 lg:h-56 rounded-2xl object-cover shadow-lg lg:sticky lg:top-20" />
+            class="w-40 h-40 lg:w-56 lg:h-56 rounded-2xl object-cover shadow-lg"/>
 
         <!-- links to fun stuffs -->
         <section id="links" class="space-y-3">
@@ -107,7 +110,7 @@
     <!-- INTRO!!! -->
     <section id="about">
         <h1 class="text-4xl font-bold mb-4">Hi, I'm Lia!</h1>
-        <p class="text-lg text-gray-700 dark:text-gray-300">
+        <p class="text-lg text-black dark:text-gray-300">
             Hi! I'm Lia, an aspiring engineer and robot enthusiast who enjoys travelling, making and listening to music, watching musicals, and photography.
         </p>
     </section>
@@ -115,7 +118,7 @@
     <!-- CURRENT WORK!!! -->
     <section id="now">
         <h2 class="text-2xl font-semibold">Current Work</h2>
-        <p class="mt-2 text-gray-700 dark:text-gray-300">
+        <p class="mt-2 text-black dark:text-gray-300">
             vibinvibinvibin
         </p>
     </section>
@@ -139,6 +142,11 @@
     </section>
     </div>
     </main>
+
+    <!-- FOOTER!!! -->
+    <footer class="max-w-6xl mx-auto px-4 sm:px-6 pb-16 pt-4 text-xs" style="color:var(--muted)">
+        © <span id="year"></span> Lia.M.C.
+    </footer>
 </body>
 
 </html>
