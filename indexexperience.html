@@ -57,7 +57,7 @@
     </style>
 </head>
 
-<body class="antialiased font-sans bg-[var(--bg)] text-[var(--text)]">
+<body class="antialiased font-sans bg-[var(--bg)] text-[var(--text)] leading-[1.75]">
     <!-- HEADER!!! -->
     <!-- sticky & top-0 keeps header at top when scrolling, z-40 ensures header appears on top of all other elements (higher z -> top layer) -->
     <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--border)] bg-[color-mix(in_srgb,var(--bg),transparent_20%)]">
@@ -85,6 +85,161 @@
                     aria-label="Switch Theme">☾</button>
         </div>
     </header>
+
+    <!-- MAIN!!! -->  
+    <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+
+        <!-- for mobile! -->
+        <div class="block lg:hidden flex justify-center my-6">
+            <img src="images/personalwebsitepfpcandidate2.jpg" 
+                alt="Profile Picture"
+                class="w-32 h-32 rounded-2xl object-cover shadow-lg"/>
+        </div>
+    
+        <!-- my profile pic with mini introooo -->
+        <aside class="lg:col-span-1 self-start">
+            <div class="fixed top-14 flex flex-col items-center space-y-6 pt-9">
+                <img src="images/personalwebsitepfpcandidate2.jpg" alt="Lia's Profile Picture"
+                    class="w-40 h-40 lg:w-56 lg:h-56 rounded-2xl object-cover shadow-lg"/>
+
+                <!-- links to fun stuffs -->
+                <section id="links" class="space-y-3">
+                    <p></p>
+                    <h2 class="text-2xl font-semibold">Find Me</h2>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="mailto:lia.campbell@mail.utoronto.ca" class="btn-primary">Email</a>
+                        <a href="https://github.com/Lia-MC" target="_blank" class="btn-primary">GitHub</a>
+                        <a href="https://linkedin.com/in/lia-m-campbell" target="_blank" class="btn-primary">LinkedIn</a>
+                        <!-- <a href="resume.pdf" target="_blank" class="btn-primary">Resume</a> -->
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <!-- main content columnnn -->
+        <main class="lg:col-span-3">
+        <div class="space-y-10">
+
+        <!-- PAGE HEADER!!! -->
+        <section id="about">
+            <br>
+            <h1 class="text-4xl font-bold mb-4">Experience</h1>
+        </section>
+
+        <!-- EDUCATION!!! -->
+        <section id="education">
+            <h2 class="text-2xl font-semibold">Education</h2>
+            <p>
+                <strong>University of Toronto (2024 - 2029)</strong>
+                <br>
+                - Intended Robotics Major
+                <br>
+                - Intended Artifical Intelligence Minor
+                <br>
+                - Intended PEY Co-Op Program
+                <br>
+                <strong>Bloor Collegiate Institute (2020 - 2024)</strong>
+                <br>
+                - Ontario Secondary School Diploma (OSSD)
+                <br>
+                - Talented Offerings in Programmes of Sciences
+                <br>
+                - Completion of Core French Program
+                <br>
+            </p>
+        </section>
+
+        <!-- WORK & RESEARCH!!! -->
+        <section id="workandresearch">
+            <h2 class="text-2xl font-semibold">Work & Research</h2>
+            <p>
+                <strong>Research Intern @ National University of Singapore (May - Aug 2025)</strong>
+                <br>
+                - Developed a novel microstrip patch antenna design for the TR12 defect using Ansys HFSS.
+                <br>
+                - Collaboratively designed a 3-axis Helmholtz Coil that generates a strong, uniform magnetic field using CAD and 3D-printing.
+                <br>
+            </p>
+        </section>
+        
+         <!-- AWARDS!!! -->
+        <section id="awards">
+            <h2 class="text-2xl font-semibold">Awards</h2>
+            <p>
+                <strong>Engineering Science Research Opportunity Program - Global (2025)</strong>
+                <br>
+                - Received $4500 as a stipend to conduct research at the National University of Singapore.
+                <br>
+                <strong>Mitacs Globalink Research Award (2025)</strong>
+                <br>
+                - Received $6000 as a stipend to conduct research at the National University of Singapore.
+                <br>
+                <strong>Ian and Shirley Rowe Innovation and Community Impact Award (2025)</strong>
+                <br>
+                - Received $500 in recognition of innovation in design or design approach, effective and inclusive teamwork, and passion for community impact. Annually awarded to each member of two teams in the Praxis ll Course.
+                <br>
+                <strong>Dean's Merit Award (2024)</strong>
+                <br>
+                - Received a $10000 entrance scholarship for University of Toronto Engineering.
+                <br>
+                <strong>Canadian Women in STEM Scholarship Finalist (2024)</strong>
+                <br>
+                - Received $2000 in recognition for deep dedication to the advancement of equity, diversity, and inclusion in STEM through impressive leadership and a strong passion for the field.
+                <br>
+                <strong>Schulich Leader Nominee (2024)</strong>
+                <br>
+                - Nominated by Bloor Collegiate Institute as a passionate, driven leader in STEM within the school community.
+                <br>
+                <strong>Susana Arnott Award for Leadership in Robotics (2024)</strong>
+                <br>
+                - Anually awarded to the student who inspired innovation and engineering and technology, and formed self-confidence and communication in Team Arctos 6135.
+                <br>
+                <strong>NCWIT Ontario Canada Affiliate Honourable Mention (2024)</strong>
+                <br>
+                - Recognized by the National Center for Women & Information Technology for progression in computing experiences and technical skills, leadership through teams, clubs, and teaching peers, and participation in computing-related extra-curricular activities.
+                <br>
+            </p>
+        </section>
+
+        <br>
+    </div>
+
+    <!-- FOOTER!!! -->
+    <footer class="border-t pt-6 pb-10 text-sm text-center text-gray-500 dark:text-gray-400">
+        <p>© 2025 L.M.C. All rights reserved.</p>
+    </footer>
+
+    <!-- border adjustment... -->
+    <div class="hidden lg:block lg:col-span-1"></div>
+
+    <script>
+        // dark and light mode toggling functionnn
+        const MODE = 'color-mode';
+        const root = document.documentElement;
+        const btn = document.getElementById('themeToggle');
+        function applyMode(mode) {
+            if (mode === 'light') {
+                root.classList.remove('dark');
+                btn.textContent = '☼';
+                btn.setAttribute('aria-pressed', 'false');
+            } else {
+                root.classList.add('dark');
+                btn.textContent = '☾';
+                btn.setAttribute('aria-pressed', 'true');
+            }
+        }
+
+        // // default to dark mode unless locally saved otherwiseee
+        // const saved = localStorage.getItem(MODE) || 'dark';
+        // applyMode(saved);
+
+        btn.addEventListener('click', () => {
+            const next = root.classList.contains('dark') ? 'light' : 'dark';
+            applyMode(next);
+            localStorage.setItem(MODE, next);
+        });
+    </script>
 
 </body>
 
