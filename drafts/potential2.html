@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Name — About</title>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
+            colors: {
+              // Custom theme colors
+              lightLavender: '#f5f0ff',   // background for light mode
+              darkPurple: '#0b0014',      // background for dark mode
+              midPurple: '#6d28d9',       // accent color
+            },
+            boxShadow: {
+              soft: '0 1px 2px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06)'
+            }
+          }
+        }
+      }
+    </script>
+
+    <style>
+      /* Subtle animated underline for links */
+      .link-underline { position: relative; }
+      .link-underline::after {
+        content: ""; position: absolute; left: 0; bottom: -2px; height: 1px; width: 100%;
+        transform: scaleX(0); transform-origin: left; transition: transform .25s ease;
+        background: currentColor; opacity: .35;
+      }
+      .link-underline:hover::after { transform: scaleX(1); }
+      /* Timeline dots */
+      .dot { box-shadow: 0 0 0 3px rgba(255,255,255,.5); }
+      .dark .dot { box-shadow: 0 0 0 3px rgba(0,0,0,.6); }
+    </style>
+  </head>
+
+  <!-- BODY START -->
+  <body class="bg-lightLavender text-slate-900 dark:bg-darkPurple dark:text-slate-100 antialiased">
+    
+    <!-- ================= HEADER ================= -->
+    <header class="sticky top-0 z-40 backdrop-blur border-b border-slate-200/60 dark:border-slate-700 bg-lightLavender/80 dark:bg-darkPurple/80">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
+        <a href="#" class="font-semibold tracking-tight">Your Name</a>
+        <nav class="ml-auto hidden sm:flex gap-6 text-sm">
+          <a class="link-underline" href="#now">Now</a>
+          <a class="link-underline" href="#experience">Experience</a>
+          <a class="link-underline" href="#projects">Projects</a>
+          <a class="link-underline" href="#writing">Writing</a>
+          <a class="link-underline" href="#contact">Contact</a>
+        </nav>
+        <button id="themeToggle" class="ml-auto sm:ml-0 rounded-xl px-3 py-1.5 text-sm border border-slate-300 dark:border-slate-600 hover:bg-white/30 dark:hover:bg-white/10">☾</button>
+      </div>
+    </header>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid gap-8 md:grid-cols-[320px,1fr]">
+
+      <!-- ========== SIDEBAR ========== -->
+      <aside class="md:sticky md:top-28 h-fit space-y-6">
+
+        <!-- PROFILE CARD -->
+        <section class="rounded-2xl border border-slate-300/50 dark:border-slate-700 bg-white/60 dark:bg-darkPurple/50 shadow-soft p-6">
+          <div class="flex items-center gap-4">
+            <img src="https://avatars.githubusercontent.com/u/9919?s=80" alt="avatar" class="w-16 h-16 rounded-2xl object-cover" />
+            <div>
+              <h1 class="text-xl font-semibold leading-tight">Your Name</h1>
+              <p class="text-slate-600 dark:text-slate-400 text-sm">Your role — e.g., Student • SWE • ML</p>
+            </div>
+          </div>
+          <p class="mt-4 text-sm leading-6 text-slate-700 dark:text-slate-300">
+            Short bio goes here. One or two lines about you.
+          </p>
+          <div class="mt-5 grid grid-cols-2 gap-2 text-sm" id="links"></div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="rounded-2xl border border-slate-300/50 dark:border-slate-700 bg-white/60 dark:bg-darkPurple/50 shadow-soft p-6">
+          <h2 class="font-semibold mb-3">Skills</h2>
+          <div id="skills" class="flex flex-wrap gap-2 text-sm"></div>
+        </section>
+      </aside>
+
+      <!-- ========== MAIN COLUMN ========== -->
+      <section class="space-y-8">
+
+        <!-- NOW -->
+        <section id="now" class="rounded-2xl border border-slate-300/50 dark:border-slate-700 bg-white/60 dark:bg-darkPurple/50 shadow-soft p-6">
+          <h2 class="font-semibold">What I'm doing now</h2>
+          <p class="mt-2 text-slate-700 dark:text-slate-300 text-sm leading-6">
+            • Example: Studying <strong>Systems + ML</strong> · Building <strong>side projects</strong> · Training for a <strong>5K</strong>
+          </p>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="rounded-2xl border border-slate-300/50 dark:border-slate-700 bg-white/60 dark:bg-darkPurple/50 shadow-soft p-6">
+          <h2 class="font-semibold">Experience</h2>
+          <ul id="experienceList" class="mt-6 relative space-y-8"></ul>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="rounded-2xl border border-slate-300/50 dark:border-slate-700 bg-white/60 dark:bg-darkPurple/50 shadow-soft p-6">
+          <h2 class="font-semibold">Projects</h2>
+          <div id="projectsGrid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </section>
+
+        <!-- WRITING -->
+        <section id="writing" class="rounded-2xl border border-slate-300/50 dark:border-slate-700 bg-white/60 dark:bg-darkPurple/50 shadow-soft p-6">
+          <h2 class="font-semibold">Writing</h2>
+          <ul id="posts" class="mt-3 divide-y divide-slate-200 dark:divide-slate-700"></ul>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="rounded-2xl border border-slate-300/50 dark:border-slate-700 bg-white/60 dark:bg-darkPurple/50 shadow-soft p-6">
+          <h2 class="font-semibold">Get in touch</h2>
+          <p class="mt-2 text-sm text-slate-700 dark:text-slate-300">Best way to reach me is email.</p>
+          <a href="mailto:you@example.com" class="mt-3 inline-block rounded-xl border border-slate-300 dark:border-slate-600 px-4 py-2 hover:bg-white/30 dark:hover:bg-white/10">Email me</a>
+        </section>
+
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="max-w-6xl mx-auto px-4 sm:px-6 pb-16 pt-4 text-xs text-slate-500">
+      © <span id="year"></span> Your Name.
+    </footer>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+      // ------------------------------
+      // DATA VARIABLES (edit here)
+      // ------------------------------
+      const links = [
+        { label: 'Email', url: 'mailto:you@example.com' },
+        { label: 'GitHub', url: 'https://github.com/yourname' },
+        { label: 'LinkedIn', url: 'https://linkedin.com/in/yourname' },
+        { label: 'Resume', url: '#' }
+      ];
+
+      const skills = [ 'Python', 'C/C++', 'React', 'ROS / PX4', 'Tailwind' ];
+
+      const experience = [
+        { role: 'Software Engineer Intern · Company', date: 'May 2025 — Aug 2025', desc: 'Shipped a feature and improved performance by 20%.', tags: ['React','TypeScript','Postgres'] },
+        { role: 'Research Assistant · University', date: 'Jan 2025 — Apr 2025', desc: 'Worked on ML pipeline for robotics.', tags: ['Python','PyTorch','ROS'] },
+      ];
+
+      const projects = [
+        { name: 'Pocket Fridge', desc: 'Track groceries and reduce waste.', tags: ['Next.js','Prisma','OpenAI API'], link: '#' },
+        { name: 'Guardian', desc: 'Personal safety app.', tags: ['React Native','Expo'], link: '#' },
+      ];
+
+      const posts = [
+        { date: 'Aug 2025', title: 'What I learned building in 10 days', url: '#' },
+        { date: 'Jul 2025', title: 'A tiny guide to tidy Git commits', url: '#' },
+      ];
+
+      // ------------------------------
+      // RENDER HELPERS
+      // ------------------------------
+      const container = (id) => document.getElementById(id);
+
+      // Render links
+      container('links').innerHTML = links.map(l => `
+        <a href="${l.url}" class="rounded-xl border border-slate-300 dark:border-slate-600 px-3 py-2 hover:bg-white/30 dark:hover:bg-white/10">${l.label}</a>
+      `).join('');
+
+      // Render skills
+      container('skills').innerHTML = skills.map(s => `
+        <span class="px-2.5 py-1 rounded-full bg-white/50 dark:bg-white/10 border border-slate-300 dark:border-slate-600">${s}</span>
+      `).join('');
+
+      // Render experience timeline
+      container('experienceList').innerHTML = experience.map(e => `
+        <li class="relative pl-12">
+          <span class="dot absolute left-2.5 top-1.5 w-3.5 h-3.5 rounded-full bg-midPurple"></span>
+          <div class="flex flex-wrap items-baseline gap-x-2">
+            <h3 class="font-medium">${e.role}</h3>
+            <span class="text-xs text-slate-500">${e.date}</span>
+          </div>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300 leading-6">${e.desc}</p>
+          <div class="mt-2 flex flex-wrap gap-2 text-xs">
+            ${e.tags.map(t => `<span class="px-2 py-1 rounded-full bg-white/50 dark:bg-white/10 border border-slate-300 dark:border-slate-600">${t}</span>`).join('')}
+          </div>
+        </li>
+      `).join('');
+
+      // Render projects
+      container('projectsGrid').innerHTML = projects.map(p => `
+        <article class="rounded-2xl border border-slate-300 dark:border-slate-600 p-4 hover:shadow-soft bg-white/60 dark:bg-white/10">
+          <h3 class="font-medium">${p.name}</h3>
+          <p class="mt-1 text-sm text-slate-700 dark:text-slate-300">${p.desc}</p>
+          <div class="mt-2 flex flex-wrap gap-2 text-xs">
+            ${p.tags.map(t => `<span class="px-2 py-1 rounded-full bg-white/50 dark:bg-white/10 border border-slate-300 dark:border-slate-600">${t}</span>`).join('')}
+          </div>
+          <a class="mt-3 inline-block text-sm link-underline" href="${p.link}">View →</a>
+        </article>
+      `).join('');
+
+      // Render posts
+      container('posts').innerHTML = posts.map(p => `
+        <li class="py-3 flex items-baseline gap-3">
+          <span class="text-xs text-slate-500 w-24 shrink-0">${p.date}</span>
+          <a class="link-underline" href="${p.url}">${p.title}</a>
+        </li>
+      `).join('');
+
+      // Dark mode toggle
+      const key = 'prefers-dark';
+      const root = document.documentElement;
+      const saved = localStorage.getItem(key);
+      if (saved === 'true') root.classList.add('dark');
+      document.getElementById('themeToggle').addEventListener('click', () => {
+        const isDark = root.classList.toggle('dark');
+        localStorage.setItem(key, isDark);
+      });
+
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>

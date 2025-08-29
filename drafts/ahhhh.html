@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Your Name — About</title>
+
+    <!-- ================= FONTS ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+
+    <!-- ================= TAILWIND (CDN) ================= -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- ================= THEME (CSS VARIABLES) ================= -->
+    <style>
+      /*
+        We use CSS custom properties so you can tweak the palette in ONE place.
+        Light theme = soft lavender, Dark theme = deep purple (not pure black).
+      */
+      :root {
+        --bg: #F4EEFF;          /* page background */
+        --card: rgba(255,255,255,0.70); /* card background */
+        --text: #0f172a;        /* primary text (slate-900-ish) */
+        --muted: #475569;       /* secondary text */
+        --border: rgba(100,116,139,0.35); /* slate-500-ish */
+        --accent: #7c3aed;      /* mid purple */
+        --chip: rgba(255,255,255,0.55);  /* pill bg */
+        --chip-border: rgba(100,116,139,0.35);
+      }
+      .dark {
+        --bg: #100016;          /* deep purple */
+        --card: rgba(16,0,22,0.60);
+        --text: #e5e7eb;        /* slate-200-ish */
+        --muted: #a1a1aa;       /* zinc-400-ish */
+        --border: rgba(148,163,184,0.25);
+        --accent: #a78bfa;      /* lighter purple */
+        --chip: rgba(255,255,255,0.08);
+        --chip-border: rgba(148,163,184,0.30);
+      }
+
+      /* Small reusable utilities (pure CSS, no @apply) */
+      .nav-link { position: relative; }
+      .nav-link::after { content:""; position:absolute; left:0; bottom:-2px; height:1px; width:100%; transform:scaleX(0); transform-origin:left; transition:transform .25s ease; background: currentColor; opacity:.35; }
+      .nav-link:hover::after { transform:scaleX(1); }
+
+      .dot { box-shadow: 0 0 0 3px rgba(255,255,255,.5); }
+      .dark .dot { box-shadow: 0 0 0 3px rgba(0,0,0,.6); }
+    </style>
+  </head>
+
+  <body class="antialiased font-sans bg-[var(--bg)] text-[var(--text)]">
+
+    <!-- ================= HEADER ================= -->
+    <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--border)] bg-[color-mix(in_srgb,var(--bg),transparent_20%)]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
+        <a href="#" class="font-semibold tracking-tight">Your Name</a>
+        <nav class="ml-auto hidden sm:flex gap-6 text-sm" aria-label="Primary">
+          <a class="nav-link" href="#now">Now</a>
+          <a class="nav-link" href="#experience">Experience</a>
+          <a class="nav-link" href="#projects">Projects</a>
+          <a class="nav-link" href="#writing">Writing</a>
+          <a class="nav-link" href="#contact">Contact</a>
+        </nav>
+        <button id="themeToggle" class="ml-auto sm:ml-0 rounded-xl px-3 py-1.5 text-sm border border-[var(--border)] hover:bg-[color-mix(in_srgb,var(--bg),white_8%)]" aria-pressed="false" aria-label="Toggle dark mode">☾</button>
+      </div>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 grid gap-8 md:grid-cols-[320px,1fr]">
+
+      <!-- ========== SIDEBAR ========== -->
+      <aside class="md:sticky md:top-28 h-fit space-y-6" aria-label="Profile sidebar">
+
+        <!-- PROFILE CARD -->
+        <section class="rounded-2xl border border-[var(--border)] shadow-sm p-6" style="background:var(--card)">
+          <div class="flex items-center gap-4">
+            <img id="avatar" src="https://avatars.githubusercontent.com/u/9919?s=80" alt="Profile photo" class="w-16 h-16 rounded-2xl object-cover" />
+            <div>
+              <h1 id="yourName" class="text-xl font-semibold leading-tight">Your Name</h1>
+              <p id="yourTagline" class="text-sm" style="color:var(--muted)">Your role — e.g., Student • SWE • ML</p>
+            </div>
+          </div>
+          <p id="yourBio" class="mt-4 text-sm leading-6" style="color:var(--muted)">Short bio goes here. One or two lines about you.</p>
+          <div id="links" class="mt-5 grid grid-cols-2 gap-2 text-sm" aria-label="Links"></div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="rounded-2xl border border-[var(--border)] shadow-sm p-6" style="background:var(--card)" aria-labelledby="skills-heading">
+          <h2 id="skills-heading" class="font-semibold mb-3">Skills</h2>
+          <div id="skills" class="flex flex-wrap gap-2 text-sm" aria-label="Skill tags"></div>
+        </section>
+      </aside>
+
+      <!-- ========== MAIN COLUMN ========== -->
+      <section class="space-y-8">
+
+        <!-- NOW -->
+        <section id="now" class="rounded-2xl border border-[var(--border)] shadow-sm p-6" style="background:var(--card)" aria-labelledby="now-heading">
+          <h2 id="now-heading" class="font-semibold">What I'm doing now</h2>
+          <p id="nowText" class="mt-2 text-sm leading-6" style="color:var(--muted)"></p>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="rounded-2xl border border-[var(--border)] shadow-sm p-6" style="background:var(--card)" aria-labelledby="exp-heading">
+          <h2 id="exp-heading" class="font-semibold">Experience</h2>
+          <ul id="experienceList" class="mt-6 relative space-y-8"></ul>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="rounded-2xl border border-[var(--border)] shadow-sm p-6" style="background:var(--card)" aria-labelledby="projects-heading">
+          <h2 id="projects-heading" class="font-semibold">Projects</h2>
+          <div id="projectsGrid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        </section>
+
+        <!-- WRITING -->
+        <section id="writing" class="rounded-2xl border border-[var(--border)] shadow-sm p-6" style="background:var(--card)" aria-labelledby="writing-heading">
+          <h2 id="writing-heading" class="font-semibold">Writing</h2>
+          <ul id="posts" class="mt-3 divide-y" style="border-color:var(--border)"></ul>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="rounded-2xl border border-[var(--border)] shadow-sm p-6" style="background:var(--card)" aria-labelledby="contact-heading">
+          <h2 id="contact-heading" class="font-semibold">Get in touch</h2>
+          <p class="mt-2 text-sm" style="color:var(--muted)">Best way to reach me is email.</p>
+          <a id="emailBtn" href="mailto:you@example.com" class="mt-3 inline-block rounded-xl border px-4 py-2 hover:bg-white/10" style="border-color:var(--border)">Email me</a>
+        </section>
+
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="max-w-6xl mx-auto px-4 sm:px-6 pb-16 pt-4 text-xs" style="color:var(--muted)">
+      © <span id="year"></span> <span id="footerName">Your Name</span>.
+    </footer>
+
+    <!-- ================= TEMPLATES ================= -->
+    <!--
+      The goal: avoid long unreadable template strings like `${e.tags.map(...)}`.
+      We define small, semantic <template> blocks and clone them in JS.
+      You only edit the DATA arrays below, not the HTML structure.
+    -->
+
+    <!-- Link button -->
+    <template id="tpl-link">
+      <a class="rounded-xl border px-3 py-2 text-center hover:bg-white/10" style="border-color:var(--border)" data-href>
+        <span data-text="label"></span>
+      </a>
+    </template>
+
+    <!-- Skill chip -->
+    <template id="tpl-skill">
+      <span class="px-2.5 py-1 rounded-full border" style="background:var(--chip); border-color:var(--chip-border)" data-text="skill"></span>
+    </template>
+
+    <!-- Tag chip (reused for project/experience tags) -->
+    <template id="tpl-tag">
+      <span class="px-2 py-1 rounded-full border text-xs" style="background:var(--chip); border-color:var(--chip-border)" data-text="tag"></span>
+    </template>
+
+    <!-- Experience item -->
+    <template id="tpl-experience">
+      <li class="relative pl-12">
+        <span class="dot absolute left-2.5 top-1.5 w-3.5 h-3.5 rounded-full" style="background:var(--accent)"></span>
+        <div class="flex flex-wrap items-baseline gap-x-2">
+          <h3 class="font-medium" data-text="role"></h3>
+          <span class="text-xs" style="color:var(--muted)" data-text="date"></span>
+        </div>
+        <p class="mt-1 text-sm leading-6" style="color:var(--muted)" data-text="desc"></p>
+        <div class="mt-2 flex flex-wrap gap-2 text-xs" data-slot="tags"></div>
+      </li>
+    </template>
+
+    <!-- Project card -->
+    <template id="tpl-project">
+      <article class="rounded-2xl border p-4 hover:shadow-sm" style="background:var(--card); border-color:var(--border)">
+        <h3 class="font-medium" data-text="name"></h3>
+        <p class="mt-1 text-sm" style="color:var(--muted)" data-text="desc"></p>
+        <div class="mt-2 flex flex-wrap gap-2 text-xs" data-slot="tags"></div>
+        <a class="mt-3 inline-block text-sm nav-link" data-href data-text="linkLabel">View →</a>
+      </article>
+    </template>
+
+    <!-- Post row -->
+    <template id="tpl-post">
+      <li class="py-3 flex items-baseline gap-3">
+        <span class="text-xs w-24 shrink-0" style="color:var(--muted)" data-text="date"></span>
+        <a class="nav-link" data-href data-text="title"></a>
+      </li>
+    </template>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script>
+      // ==========================================================
+      // 1) EDITABLE DATA (this is the ONLY place you change content)
+      // ==========================================================
+      const DATA = {
+        name: 'Your Name',
+        tagline: 'Your role — e.g., Student • SWE • ML',
+        avatar: 'https://avatars.githubusercontent.com/u/9919?s=80',
+        bio: 'Short bio goes here. One or two lines about you.',
+        now: 'Studying Systems + ML · Building side projects · Training for a 5K',
+        email: 'you@example.com',
+        links: [
+          { label: 'Email', url: 'mailto:you@example.com' },
+          { label: 'GitHub', url: 'https://github.com/yourname' },
+          { label: 'LinkedIn', url: 'https://linkedin.com/in/yourname' },
+          { label: 'Resume', url: '#' },
+        ],
+        skills: ['Python','C/C++','React','ROS / PX4','Tailwind'],
+        experience: [
+          { role: 'Software Engineer Intern · Company', date: 'May 2025 — Aug 2025', desc: 'Shipped a feature and improved performance by 20%.', tags: ['React','TypeScript','Postgres'] },
+          { role: 'Research Assistant · University', date: 'Jan 2025 — Apr 2025', desc: 'Worked on ML pipeline for robotics.', tags: ['Python','PyTorch','ROS'] },
+        ],
+        projects: [
+          { name: 'Pocket Fridge', desc: 'Track groceries and reduce waste.', tags: ['Next.js','Prisma','OpenAI API'], link: '#', linkLabel: 'View →' },
+          { name: 'Guardian', desc: 'Personal safety app.', tags: ['React Native','Expo'], link: '#', linkLabel: 'View →' },
+        ],
+        posts: [
+          { date: 'Aug 2025', title: 'What I learned building in 10 days', url: '#' },
+          { date: 'Jul 2025', title: 'A tiny guide to tidy Git commits', url: '#' },
+        ],
+      };
+
+      // ==========================================================
+      // 2) TINY RENDER HELPERS (no unreadable template strings)
+      // ==========================================================
+      const $ = (sel, root = document) => root.querySelector(sel);
+      const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+
+      function clone(id) {
+        return document.getElementById(id).content.firstElementChild.cloneNode(true);
+      }
+
+      function setText(el, key, value) {
+        const target = el.querySelector(`[data-text="${key}"]`);
+        if (target) target.textContent = value;
+      }
+
+      function setHref(el, value) {
+        const link = el.querySelector('[data-href]');
+        if (link) link.setAttribute('href', value);
+      }
+
+      function fill(el, obj) {
+        // Set text for all data-text fields
+        $$('[data-text]', el).forEach(node => {
+          const key = node.dataset.text;
+          if (obj[key] != null) node.textContent = obj[key];
+        });
+        // Set href for the first [data-href] if present
+        if (obj.url) setHref(el, obj.url);
+        return el;
+      }
+
+      // Render list using a template and optional child tag rendering
+      function renderList(targetId, items, tplId, renderChildren) {
+        const mount = document.getElementById(targetId);
+        mount.innerHTML = '';
+        items.forEach(item => {
+          const node = fill(clone(tplId), item);
+          if (renderChildren) renderChildren(node, item);
+          mount.appendChild(node);
+        });
+      }
+
+      // ==========================================================
+      // 3) APPLY DATA TO THE PAGE
+      // ==========================================================
+      // Header + profile
+      $('#yourName').textContent = DATA.name;
+      $('#footerName').textContent = DATA.name;
+      $('#yourTagline').textContent = DATA.tagline;
+      $('#yourBio').textContent = DATA.bio;
+      $('#nowText').textContent = DATA.now;
+      $('#avatar').src = DATA.avatar;
+      $('#emailBtn').href = `mailto:${DATA.email}`;
+
+      // Links, skills, experience, projects, posts
+      renderList('links', DATA.links, 'tpl-link');
+      renderList('skills', DATA.skills.map(s => ({ skill: s })), 'tpl-skill');
+
+      renderList('experienceList', DATA.experience, 'tpl-experience', (node, item) => {
+        const slot = node.querySelector('[data-slot="tags"]');
+        item.tags.forEach(t => slot.appendChild(fill(clone('tpl-tag'), { tag: t })));
+      });
+
+      renderList('projectsGrid', DATA.projects, 'tpl-project', (node, item) => {
+        const slot = node.querySelector('[data-slot="tags"]');
+        item.tags.forEach(t => slot.appendChild(fill(clone('tpl-tag'), { tag: t })));
+        setHref(node, item.link);
+      });
+
+      renderList('posts', DATA.posts.map(p => ({ title: p.title, date: p.date, url: p.url })), 'tpl-post');
+
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Dark mode toggle (stores preference)
+      const root = document.documentElement;
+      const key = 'prefers-dark';
+      const saved = localStorage.getItem(key);
+      if (saved === 'true') root.classList.add('dark');
+      const btn = document.getElementById('themeToggle');
+      const setPressed = () => btn.setAttribute('aria-pressed', root.classList.contains('dark'));
+      setPressed();
+      btn.addEventListener('click', () => {
+        root.classList.toggle('dark');
+        localStorage.setItem(key, root.classList.contains('dark'));
+        setPressed();
+      });
+    </script>
+  </body>
+</html>
