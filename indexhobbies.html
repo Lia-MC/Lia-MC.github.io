@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth dark">
+
+<head>
+    <!-- set character set to the one that includes the worlds most characters!! -->
+    <meta charset="utf-8"/> 
+    <!-- when website first loads, set the width of it to the device's at zoom 100% aka no zoom -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- website title -->
+    <title>Lia M. C.</title> <!-- Lia Campbell — Robotics Engineer, Artist, Activist -->
+
+    <!-- FONTS!!! -->
+    <!-- preconnect to the websites that'll gimme the font in advance to reduce latency, then load the fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet">
+
+    <!-- send a request to my website to download the Tailwind CSS library -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- style variables!!! -->
+    <style>
+        /* light modeee */
+        :root {
+            --bg: #F4EEFF; 
+            --card: rgba(255,255,255,0.70);
+            --text: #0f172a; 
+            --muted: #475569; 
+            --border: rgba(100,116,139,0.35);
+            --accent: #7c3aed; 
+            --chip: rgba(255,255,255,0.55); 
+            --chip-border: rgba(100,116,139,0.35);
+        }
+        /* dark modeee */
+        .dark {
+            --bg: #100016;
+            --card: rgba(16,0,22,0.60);
+            --text: #e5e7eb; 
+            --muted: #a1a1aa; 
+            --border: rgba(148,163,184,0.25);
+            --accent: #a78bfa;
+            --chip: rgba(255,255,255,0.08);
+            --chip-border: rgba(148,163,184,0.30);
+        }
+
+        /* fun css featuresss: */
+
+        /* hovering over a link, before, during, and after */
+        .nav-link { position: relative; }
+        .nav-link::after { content:""; position:absolute; left:0; bottom:-2px; height:1px; width:100%; transform:scaleX(0); transform-origin:left; transition:transform .25s ease; background: currentColor; opacity:.35; }
+        .nav-link:hover::after { transform:scaleX(1); }
+
+        /* dot effect elements that show active elements */
+        .dot { box-shadow: 0 0 0 3px rgba(255,255,255,.5); }
+        .dark .dot { box-shadow: 0 0 0 3px rgba(0,0,0,.6); }
+    </style>
+</head>
+
+<body class="antialiased font-sans bg-[var(--bg)] text-[var(--text)]">
+    <!-- HEADER!!! -->
+    <!-- sticky & top-0 keeps header at top when scrolling, z-40 ensures header appears on top of all other elements (higher z -> top layer) -->
+    <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--border)] bg-[color-mix(in_srgb,var(--bg),transparent_20%)]">
+        <!-- flex container with dimensions specified -->
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3 flex items-center gap-3">
+            <a href="#" class="font-semibold tracking-tight">Lia M. C.</a>
+            <!-- buttons for diff page sections -->
+            <nav class="ml-auto hidden sm:flex gap-6 text-sm" aria-label="Primary">
+                <!-- <a><button onclick="window.location.href='photography.html';">Photography</button></a> -->
+                <a href="index.html" class="btn-primary">About</a>
+                <a href="indexexperience.html" class="btn-primary">Experience</a>
+                <a href="indexprojects.html" class="btn-primary">Projects</a>
+                <a href="indexhobbies.html" class="btn-primary">Hobbies</a>
+                <a href="indexcontact.html" class="btn-primary">Let's Connect</a>
+                <!-- <a class="nav-link" href="#now">About</a>
+                <a class="nav-link" href="#experience">Experience</a>
+                <a class="nav-link" href="#projects">Projects</a>
+                <a class="nav-link" href="#hobbies">Hobbies</a>
+                <a class="nav-link" href="#contact">Let's Connect!</a> -->
+            </nav>
+            <!-- dark and light mode toggling: -->
+            <button id="themeToggle" 
+                    class="ml-auto sm:ml-0 rounded-xl px-3 py-1.5 text-sm border border-[var(--border)] hover:bg-[color-mix(in_srgb,var(--bg),white_8%)]" 
+                    aria-pressed="true" 
+                    aria-label="Switch Theme">☾</button>
+        </div>
+    </header>
