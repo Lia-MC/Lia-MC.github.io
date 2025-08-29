@@ -85,6 +85,104 @@
                     aria-label="Switch Theme">☾</button>
         </div>
     </header>
+
+    <!-- MAIN!!! -->  
+    <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+
+        <!-- for mobile! -->
+        <div class="block lg:hidden flex justify-center my-6">
+            <img src="images/personalwebsitepfpcandidate2.jpg" 
+                alt="Profile Picture"
+                class="w-32 h-32 rounded-2xl object-cover shadow-lg"/>
+        </div>
+    
+        <!-- my profile pic with mini introooo -->
+        <aside class="lg:col-span-1 self-start">
+            <div class="fixed top-14 flex flex-col items-center space-y-6 pt-9">
+                <img src="images/personalwebsitepfpcandidate2.jpg" alt="Lia's Profile Picture"
+                    class="w-40 h-40 lg:w-56 lg:h-56 rounded-2xl object-cover shadow-lg"/>
+
+                <!-- links to fun stuffs -->
+                <section id="links" class="space-y-3">
+                    <p></p>
+                    <h2 class="text-2xl font-semibold">Find Me</h2>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="mailto:lia.campbell@mail.utoronto.ca" class="btn-primary">Email</a>
+                        <a href="https://github.com/Lia-MC" target="_blank" class="btn-primary">GitHub</a>
+                        <a href="https://linkedin.com/in/lia-m-campbell" target="_blank" class="btn-primary">LinkedIn</a>
+                        <!-- <a href="resume.pdf" target="_blank" class="btn-primary">Resume</a> -->
+                    </div>
+                </section>
+            </div>
+        </aside>
+
+        <!-- main content columnnn -->
+        <main class="lg:col-span-3">
+        <div class="space-y-10">  
+
+        <!-- PAGE HEADER!!! -->
+        <section id="hobbies">
+            <br>
+            <h1 class="text-4xl font-bold mb-4">Hobbies</h1>
+            <p>Here are some of my hobbies!</p>
+        </section>
+
+        <!-- HOBBIES!!! -->
+        <section id="hobbies" class="px-6 py-0">
+
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+
+                <!-- Skule Nite -->
+                <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+                    <img src="images/skulenite.JPG" alt="Skule Nite" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Skule Nite</h3>
+                        <p class="text-sm leading-relaxed">I'm the Sound Effects Director and a writer for Skule Nite 2026 and was the Assistant Sound Effects Director for Skule Nite 2025.</p>
+                    </div>
+                </div>                
+
+                <!-- F!rosh Week -->
+                <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+                    <img src="images/froshweek.JPG" alt="F!rosh Week" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">F!rosh Week</h3>
+                        <p class="text-sm leading-relaxed">Served as Leedur and led registration and campus tours for the Omega Group in 2025.</p>
+                    </div>
+                </div>
+
+                <!-- Travelling -->
+                <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+                    <img src="images/travels.jpg" alt="Travelling" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Travelling</h3>
+                        <p class="text-sm leading-relaxed">I am an avid traveller hoping to travel across Europe and Asia, sometime soon!</p>
+                    </div>
+                </div>
+                
+                <!-- Photography -->
+                <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+                    <img src="photographies/personal website pic 1.png" alt="Photography" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Photography</h3>
+                        <p class="text-sm leading-relaxed">I enjoy photography! Above is the photo I am most proud of to this date.</p>
+                    </div>
+                </div>
+
+                <!-- Song Writing -->
+                <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+                    <img src="images/purple.png" alt="Song Writing" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Song Writing</h3>
+                        <p class="text-sm leading-relaxed">I enjoy writing and producing tunes, songs, and poems!</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <br>
+    </div>
     
     <!-- FOOTER!!! -->
     <footer class="border-t pt-6 pb-10 text-sm text-center text-gray-500 dark:text-gray-400">
@@ -120,6 +218,20 @@
             applyMode(next);
             localStorage.setItem(MODE, next);
         });
+
+        // Animate project cards on every scroll
+        const cards = document.querySelectorAll('.project-card');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.remove('opacity-0', 'translate-y-6');
+                entry.target.classList.add('opacity-100', 'translate-y-0');
+            }
+            });
+        }, { threshold: 0.2 });
+
+        cards.forEach(card => observer.observe(card));        
+
     </script>
 
 </body>
