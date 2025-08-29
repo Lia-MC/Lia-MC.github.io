@@ -142,6 +142,15 @@
                     </div>
                 </div> -->
 
+                <!-- Project UTAT SAE -->
+                <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+                    <img src="images/utatsae.jpg" alt="UTATSAE" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">UTAT SAE Plane</h3>
+                        <p class="text-sm leading-relaxed">Uses ROS, Python, and Git to implement an improved localization system for the plane in the Unmanned Aerial Systems Division: SAE Aero Design Competition.</p>
+                    </div>
+                </div>                
+
                 <!-- Project Coil -->
                 <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
                     <img src="images/helmholtz.png" alt="Helmholtz" class="w-full h-48 object-cover">
@@ -169,6 +178,24 @@
                     </div>
                 </div>
 
+                <!-- Project Cutis -->
+                <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+                    <img src="images/cutis.jpg" alt="Cutis" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Cutis</h3>
+                        <p class="text-sm leading-relaxed">Led the software development and pitched Cutis with my team at Elle Hacks 2025.</p>
+                    </div>
+                </div>
+
+                <!-- Project UTEK Plane -->
+                <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
+                    <img src="images/utek side ish view.jpg" alt="UTEK Plane" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">UTEK Plane</h3>
+                        <p class="text-sm leading-relaxed">Designed and built a lightweight plane model for the University of Toronto Engineering Kompetition in 2025.</p>
+                    </div>
+                </div>                
+                
                 <!-- Project Rolln'Scroll -->
                 <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
                     <img src="images/rollnscroll.png" alt="Rolln'Scroll" class="w-full h-48 object-cover">
@@ -207,7 +234,7 @@
 
                 <!-- Project Sapphire -->
                 <div class="project-card rounded-2xl shadow-lg overflow-hidden transform transition-all duration-500 opacity-0 translate-y-6 bg-white text-gray-900 dark:bg-gray-800 dark:text-gray-100">
-                    <iframe src="https://drive.google.com/file/d/1fQjP9v3mHYROHbUf7rDbFjqst9k2eRJj/preview" allow="autoplay" alt="A video of our business pitch for Sapphire" style="height: 60%; width: 100%;"></iframe>
+                    <iframe src="https://drive.google.com/file/d/1fQjP9v3mHYROHbUf7rDbFjqst9k2eRJj/preview" allow="autoplay" alt="A video of our business pitch for Sapphire" class="w-full h-48 object-cover"></iframe>
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">Sapphire</h3>
                         <p class="text-sm leading-relaxed">Designed a website with my design team to improve sex-ed during the SHAD Program at the University of Prince Edward Island in 2022.</p>
@@ -263,14 +290,13 @@
             localStorage.setItem(MODE, next);
         });
 
-          // Animate project cards on scroll
+        // Animate project cards on every scroll
         const cards = document.querySelectorAll('.project-card');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.remove('opacity-0', 'translate-y-6');
                 entry.target.classList.add('opacity-100', 'translate-y-0');
-                observer.unobserve(entry.target); // animate only once
             }
             });
         }, { threshold: 0.2 });
