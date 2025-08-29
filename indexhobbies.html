@@ -57,7 +57,7 @@
     </style>
 </head>
 
-<body class="antialiased font-sans bg-[var(--bg)] text-[var(--text)]">
+<body class="antialiased font-sans bg-[var(--bg)] text-[var(--text)] leading-[1.75]">
     <!-- HEADER!!! -->
     <!-- sticky & top-0 keeps header at top when scrolling, z-40 ensures header appears on top of all other elements (higher z -> top layer) -->
     <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--border)] bg-[color-mix(in_srgb,var(--bg),transparent_20%)]">
@@ -86,6 +86,42 @@
         </div>
     </header>
     
+    <!-- FOOTER!!! -->
+    <footer class="border-t pt-6 pb-10 text-sm text-center text-gray-500 dark:text-gray-400">
+        <p>© 2025 L.M.C. All rights reserved.</p>
+    </footer>
+
+    <!-- border adjustment... -->
+    <div class="hidden lg:block lg:col-span-1"></div>
+
+    <script>
+        // dark and light mode toggling functionnn
+        const MODE = 'color-mode';
+        const root = document.documentElement;
+        const btn = document.getElementById('themeToggle');
+        function applyMode(mode) {
+            if (mode === 'light') {
+                root.classList.remove('dark');
+                btn.textContent = '☼';
+                btn.setAttribute('aria-pressed', 'false');
+            } else {
+                root.classList.add('dark');
+                btn.textContent = '☾';
+                btn.setAttribute('aria-pressed', 'true');
+            }
+        }
+
+        // default to dark mode unless locally saved otherwiseee
+        const saved = localStorage.getItem(MODE) || 'dark';
+        applyMode(saved);
+
+        btn.addEventListener('click', () => {
+            const next = root.classList.contains('dark') ? 'light' : 'dark';
+            applyMode(next);
+            localStorage.setItem(MODE, next);
+        });
+    </script>
+
 </body>
 
 </html>

@@ -57,7 +57,7 @@
     </style>
 </head>
 
-<body class="antialiased font-sans bg-[var(--bg)] text-[var(--text)]">
+<body class="antialiased font-sans bg-[var(--bg)] text-[var(--text)] leading-[1.75]">
     <!-- HEADER!!! -->
     <!-- sticky & top-0 keeps header at top when scrolling, z-40 ensures header appears on top of all other elements (higher z -> top layer) -->
     <header class="sticky top-0 z-40 backdrop-blur border-b border-[var(--border)] bg-[color-mix(in_srgb,var(--bg),transparent_20%)]">
@@ -180,9 +180,9 @@
             }
         }
 
-        // // default to dark mode unless locally saved otherwiseee
-        // const saved = localStorage.getItem(MODE) || 'dark';
-        // applyMode(saved);
+        // default to dark mode unless locally saved otherwiseee
+        const saved = localStorage.getItem(MODE) || 'dark';
+        applyMode(saved);
 
         btn.addEventListener('click', () => {
             const next = root.classList.contains('dark') ? 'light' : 'dark';

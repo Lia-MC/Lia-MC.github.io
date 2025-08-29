@@ -230,9 +230,9 @@
             }
         }
 
-        // // default to dark mode unless locally saved otherwiseee
-        // const saved = localStorage.getItem(MODE) || 'dark';
-        // applyMode(saved);
+        // default to dark mode unless locally saved otherwiseee
+        const saved = localStorage.getItem(MODE) || 'dark';
+        applyMode(saved);
 
         btn.addEventListener('click', () => {
             const next = root.classList.contains('dark') ? 'light' : 'dark';
